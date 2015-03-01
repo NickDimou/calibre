@@ -1,4 +1,4 @@
-File:    APPNOTE.TXT - .ZIP File Format Specification
+File: APPNOTE.TXT - .ZIP File Format Specification
 Version: 6.3.2 
 Revised: September 28, 2007
 Copyright (c) 1989 - 2007 PKWARE Inc., All Rights Reserved.
@@ -11,10 +11,10 @@ I. Purpose
 ----------
 
 This specification is intended to define a cross-platform,
-interoperable file storage and transfer format.  Since its 
+interoperable file storage and transfer format. Since its 
 first publication in 1989, PKWARE has remained committed to 
 ensuring the interoperability of the .ZIP file format through 
-publication and maintenance of this specification.  We trust that 
+publication and maintenance of this specification. We trust that 
 all .ZIP compatible vendors and application developers that have 
 adopted and benefited from this format will share and support 
 this commitment to interoperability.
@@ -40,7 +40,7 @@ that the information contained in the associated materials relating
 to the subject programs and/or the format of the files created or
 accessed by the subject programs and/or the algorithms used by
 the subject programs, or any other matter, is current, correct or
-accurate as delivered.  Any risk of damage due to any possible
+accurate as delivered. Any risk of damage due to any possible
 inaccurate information is assumed by the user of the information.
 Furthermore, the information relating to the subject programs
 and/or the file formats created or accessed by the subject
@@ -50,7 +50,7 @@ subject to change without notice.
 If the version of this file is marked as a NOTIFICATION OF CHANGE,
 the content defines an Early Feature Specification (EFS) change 
 to the .ZIP file format that may be subject to modification prior 
-to publication of the Final Feature Specification (FFS).  This
+to publication of the Final Feature Specification (FFS). This
 document may also contain information on Planned Feature 
 Specifications (PFS) defining recognized future extensions.
 
@@ -113,7 +113,7 @@ Version       Change Description                        Date
 V. General Format of a .ZIP file
 --------------------------------
 
-  Files stored in arbitrary order.  Large .ZIP files can span multiple
+  Files stored in arbitrary order. Large .ZIP files can span multiple
   volumes or be split into user-defined segment sizes. All values
   are stored in little-endian byte order unless otherwise specified. 
 
@@ -167,59 +167,59 @@ V. General Format of a .ZIP file
         uncompressed size               4 bytes
 
       This descriptor exists only if bit 3 of the general
-      purpose bit flag is set (see below).  It is byte aligned
+      purpose bit flag is set (see below). It is byte aligned
       and immediately follows the last byte of compressed data.
       This descriptor is used only when it was not possible to
       seek in the output .ZIP file, e.g., when the output .ZIP file
-      was standard output or a non-seekable device.  For ZIP64(tm) format
+      was standard output or a non-seekable device. For ZIP64(tm) format
       archives, the compressed and uncompressed sizes are 8 bytes each.
 
       When compressing files, compressed and uncompressed sizes 
       should be stored in ZIP64 format (as 8 byte values) when a 
-      files size exceeds 0xFFFFFFFF.   However ZIP64 format may be 
-      used regardless of the size of a file.  When extracting, if 
+      files size exceeds 0xFFFFFFFF. However ZIP64 format may be 
+      used regardless of the size of a file. When extracting, if 
       the zip64 extended information extra field is present for 
       the file the compressed and uncompressed sizes will be 8
-      byte values.  
+      byte values.
 
       Although not originally assigned a signature, the value 
       0x08074b50 has commonly been adopted as a signature value 
-      for the data descriptor record.  Implementers should be 
+      for the data descriptor record. Implementers should be 
       aware that ZIP files may be encountered with or without this 
       signature marking data descriptors and should account for
       either case when reading ZIP files to ensure compatibility.
       When writing ZIP files, it is recommended to include the
-      signature value marking the data descriptor record.  When
+      signature value marking the data descriptor record. When
       the signature is used, the fields currently defined for
       the data descriptor record will immediately follow the
       signature.
 
       An extensible data descriptor will be released in a future
-      version of this APPNOTE.  This new record is intended to
+      version of this APPNOTE. This new record is intended to
       resolve conflicts with the use of this record going forward,
       and to provide better support for streamed file processing.
 
       When the Central Directory Encryption method is used, the data
-      descriptor record is not required, but may be used.  If present,
+      descriptor record is not required, but may be used. If present,
       and bit 3 of the general purpose bit field is set to indicate
       its presence, the values in fields of the data descriptor
       record should be set to binary zeros.
 
-  D.  Archive decryption header:  
+  D.  Archive decryption header:
 
       The Archive Decryption Header is introduced in version 6.2
-      of the ZIP format specification.  This record exists in support
+      of the ZIP format specification. This record exists in support
       of the Central Directory Encryption Feature implemented as part of 
       the Strong Encryption Specification as described in this document.
       When the Central Directory Structure is encrypted, this decryption
-      header will precede the encrypted data segment.  The encrypted
+      header will precede the encrypted data segment. The encrypted
       data segment will consist of the Archive extra data record (if
       present) and the encrypted Central Directory Structure data.
       The format of this data record is identical to the Decryption
-      header record preceding compressed file data.  If the central 
+      header record preceding compressed file data. If the central 
       directory structure is encrypted, the location of the start of
       this data record is determined using the Start of Central Directory
-      field in the Zip64 End of Central Directory record.  Refer to the 
+      field in the Zip64 End of Central Directory record. Refer to the 
       section on the Strong Encryption Specification for information
       on the fields used in the Archive Decryption Header record.
 
@@ -231,16 +231,16 @@ V. General Format of a .ZIP file
         extra field data                (variable size)
 
       The Archive Extra Data Record is introduced in version 6.2
-      of the ZIP format specification.  This record exists in support
+      of the ZIP format specification. This record exists in support
       of the Central Directory Encryption Feature implemented as part of 
       the Strong Encryption Specification as described in this document.
       When present, this record immediately precedes the central 
-      directory data structure.  The size of this data record will be
+      directory data structure. The size of this data record will be
       included in the Size of the Central Directory field in the
-      End of Central Directory record.  If the central directory structure
+      End of Central Directory record. If the central directory structure
       is compressed, but not encrypted, the location of the start of
       this data record is determined using the Start of Central Directory
-      field in the Zip64 End of Central Directory record.  
+      field in the Zip64 End of Central Directory record.
 
 
   F.  Central directory structure:
@@ -287,7 +287,7 @@ V. General Format of a .ZIP file
       Directory Structure may be stored both compressed and encrypted. 
       Although not required, it is assumed when encrypting the
       Central Directory Structure, that it will be compressed
-      for greater storage efficiency.  Information on the
+      for greater storage efficiency. Information on the
       Central Directory Encryption feature can be found in the section
       describing the Strong Encryption Specification. The Digital 
       Signature record will be neither compressed nor encrypted.
@@ -332,7 +332,7 @@ V. General Format of a .ZIP file
 
         Special purpose data may reside in the zip64 extensible data
         sector field following either a V1 or V2 version of this
-        record.  To ensure identification of this special purpose data
+        record. To ensure identification of this special purpose data
         it must include an identifying header block consisting of the
         following:
 
@@ -346,7 +346,7 @@ V. General Format of a .ZIP file
         data block type.
 
         Multiple special purpose data blocks may be present, but each
-        must be preceded by a Header ID and Data Size field.  Current
+        must be preceded by a Header ID and Data Size field. Current
         mappings of Header ID values supported in this field are as
         defined in APPENDIX C.
 
@@ -383,13 +383,13 @@ V. General Format of a .ZIP file
       version made by (2 bytes)
 
           The upper byte indicates the compatibility of the file
-          attribute information.  If the external file attributes 
+          attribute information. If the external file attributes 
           are compatible with MS-DOS and can be read by PKZIP for 
-          DOS version 2.04g then this value will be zero.  If these 
+          DOS version 2.04g then this value will be zero. If these 
           attributes are not compatible, then this value will 
           identify the host system on which the attributes are 
-          compatible.  Software can use this information to determine
-          the line record format for text files etc.  The current
+          compatible. Software can use this information to determine
+          the line record format for text files etc. The current
           mappings are:
 
           0 - MS-DOS and OS/2 (FAT / VFAT / FAT32 file systems)
@@ -406,16 +406,16 @@ V. General Format of a .ZIP file
 
           The lower byte indicates the ZIP specification version 
           (the version of this document) supported by the software 
-          used to encode the file.  The value/10 indicates the major 
+          used to encode the file. The value/10 indicates the major 
           version number, and the value mod 10 is the minor version 
-          number.  
+          number.
 
       version needed to extract (2 bytes)
 
           The minimum supported ZIP specification version needed to 
-          extract the file, mapped as above.  This value is based on 
+          extract the file, mapped as above. This value is based on 
           the specific format features a ZIP program must support to 
-          be able to extract the file.  If multiple features are
+          be able to extract the file. If multiple features are
           applied to a file, the minimum version should be set to the 
           feature having the highest value. New features or feature 
           changes affecting the published format specification will be 
@@ -479,12 +479,12 @@ V. General Format of a .ZIP file
           (For Method 6 - Imploding)
           Bit 1: If the compression method used was type 6,
                  Imploding, then this bit, if set, indicates
-                 an 8K sliding dictionary was used.  If clear,
+                 an 8K sliding dictionary was used. If clear,
                  then a 4K sliding dictionary was used.
           Bit 2: If the compression method used was type 6,
                  Imploding, then this bit, if set, indicates
                  3 Shannon-Fano trees were used to encode the
-                 sliding dictionary output.  If clear, then 2
+                 sliding dictionary output. If clear, then 2
                  Shannon-Fano trees were used.
 
           (For Methods 8 and 9 - Deflating)
@@ -503,14 +503,14 @@ V. General Format of a .ZIP file
                  and the compressed data size must be known
                  to extract.
 
-          Note:  Bits 1 and 2 are undefined if the compression
+          Note: Bits 1 and 2 are undefined if the compression
                  method is any other.
 
           Bit 3: If this bit is set, the fields crc-32, compressed 
                  size and uncompressed size are set to zero in the 
-                 local header.  The correct values are put in the 
+                 local header. The correct values are put in the 
                  data descriptor immediately following the compressed
-                 data.  (Note: PKZIP version 2.04g for DOS only 
+                 data. (Note: PKZIP version 2.04g for DOS only 
                  recognizes this bit for method 8 compression, newer 
                  versions of PKZIP recognize this bit for any 
                  compression method.)
@@ -519,12 +519,12 @@ V. General Format of a .ZIP file
                  deflating. 
 
           Bit 5: If this bit is set, this indicates that the file is 
-                 compressed patched data.  (Note: Requires PKZIP 
+                 compressed patched data. (Note: Requires PKZIP 
                  version 2.70 or greater)
 
-          Bit 6: Strong encryption.  If this bit is set, you should
+          Bit 6: Strong encryption. If this bit is set, you should
                  set the version needed to extract value to at least
-                 50 and you must also set bit 0.  If AES encryption
+                 50 and you must also set bit 0. If AES encryption
                  is used, the version needed to extract value must 
                  be at least 51.
 
