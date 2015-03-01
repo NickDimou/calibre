@@ -14,12 +14,12 @@
     - title: "Linux MTP driver: Add ids for some newer devices."
       tickets: [1212458]
 
-    - title: "Add a trim cover option to the bulk metadata edit dialog"
+    - title: "Add a trim cover option to the bulk metadata edit dialog."
 
     - title: "Make the book information dialog user resizable, with a splitter between the cover and the info panel. Also change the background of the cover panel for books that have been marked using the Temp marker plugin."
       tickets: [1209057]
 
-    - title: "Driver for Samsung Galaxy Young Android phone"
+    - title: "Driver for Samsung Galaxy Young Android phone."
       tickets: [1212918]
  
   bug fixes:
@@ -46,7 +46,7 @@
     - title: "Sending by email: Allow sending by email to an arbitrary combination of email address. Access it via the 'Select recipients' menu entry in the Email To menu."
       tickets: [1207818]
 
-    - title: "A new 'Sort By' action for the right click menu. This allows sorting on all columns in the library, not just the visible columns. To use it go to Preferences->Toolbars and add it to 'The context menu for books in the calibre library'"
+    - title: "A new 'Sort By' action for the right click menu. This allows sorting on all columns in the library, not just the visible columns. To use it go to Preferences->Toolbars and add it to 'The context menu for books in the calibre library'."
 
     - title: "Allow adding images into the comments field, by clicking on the insert link button in the comments editor in the edit metadata dialog."
 
@@ -116,7 +116,7 @@
 
     - title: "Fix drag 'n drop of cover onto conversion dialog not working"
 
-    - title: "Device drivers: Explicitly fsync() all files when writing to devices, to reduce chances of file corruption if the device is disconnected while jobs are running"
+    - title: "Device drivers: Explicitly fsync() all files when writing to devices, to reduce chances of file corruption if the device is disconnected while jobs are running."
 
     - title: "Fix calibre not appearing in Ubuntu's 'Open with..' menu"
       tickets: [1207518]
@@ -218,7 +218,7 @@
   date: 2013-07-12
 
   new features:
-    - title: "Bulk metadata edit: Add a checkbox to prevent the refreshing of the book list after the bulk edit. This means that the book list will not be resorted and any existing search/virtual library will not be refreshed.  Useful if you have a large library as the refresh can be slow."
+    - title: "Bulk metadata edit: Add a checkbox to prevent the refreshing of the book list after the bulk edit. This means that the book list will not be resorted and any existing search/virtual library will not be refreshed. Useful if you have a large library as the refresh can be slow."
 
     - title: "Allow manually marking a book in the calibre library as being on the device. To do so click the device icon in calibre, then right click on the book you want marked and choose 'Match book to library'. Once you are done marking all the books, right click the device icon and choose 'Update cached metadata'"
 
@@ -230,7 +230,7 @@
     - title: "Add a tweak to restrict the list of output formats available in the conversion dialog. Go to Preferences->Tweaks to change it."
  
   bug fixes:
-    - title: "Amazon metadata download: Update plugin to deal with the new amazon.com website"
+    - title: "Amazon metadata download: Update plugin to deal with the new amazon.com website."
 
     - title: "Edelweiss metadata download plugin: Workaround for advanced search being broken at the Edelweiss website."
 
@@ -242,7 +242,7 @@
     - title: "Metadata download dialog: Have the OK button enabled in the results screen as well."
       tickets: [1198288]
 
-    - title: "Get Books: Update empik store plugin"
+    - title: "Get Books: Update empik store plugin."
 
   improved recipes:
     - Houston Chronicle
@@ -260,13 +260,13 @@
     - title: "Book polishing: Add option to embed all referenced fonts when polishing books using the 'Polish Books' tool."
       tickets: [1196038]
 
-    - title: "DOCX Input: Add support for clickable (hyperlinked) images"
+    - title: "DOCX Input: Add support for clickable (hyperlinked) images."
       tickets: [1196728]
 
-    - title: "DOCX Input: Insert page breaks at the start of every new section"
+    - title: "DOCX Input: Insert page breaks at the start of every new section."
       tickets: [1196728]
 
-    - title: "Drivers for Trekstor Pyrus Maxi and PocketBook Surfpad 2"
+    - title: "Drivers for Trekstor Pyrus Maxi and PocketBook Surfpad 2."
       tickets: [1196931, 1182850]
 
     - title: "DOCX Input: Add support for horizontal rules created by typing three hyphens and pressing enter."
