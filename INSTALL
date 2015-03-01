@@ -7,7 +7,7 @@ http://manual.calibre-ebook.com/develop.html
 
 On Linux, there are two kinds of installation from source possible.
 Note that both kinds require lots of dependencies as well as a
-full development environment (compilers, headers files, etc.) 
+full development environment (compilers, headers files, etc.).
 
 All installation related functions are accessed by the command::
 
