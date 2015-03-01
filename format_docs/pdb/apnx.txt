@@ -13,17 +13,17 @@ bytes   content             comments
 
 4       00010001            Format identifier. Value of 65537 little-endian.
 4       start of next       The offset after ending location of the first header.
-                            Starts a new sequence of header info
-4       length              Length of first header
-N       first header        String containing content header
+                            Starts a new sequence of header info.
+4       length              Length of first header.
+N       first header        String containing content header.
 Starts next sequence
 2       unknown             Always 1
-2       length              Length of second header
+2       length              Length of second header.
 2       page count          Total number of bytes after second header that
                             represent pages. This total includes bytes that
                             are ignored by the pageMap.
 2       unknown             Always 32
-N       second header       String containing the page mapping header
+N       second header       String containing the page mapping header.
 4*N     padding             The first number given in the page mapping header indicates the number of 0 bytes.
 4*N     page list
 
@@ -59,11 +59,11 @@ The page mapping header is a string enclosed in {} containing key, value pairs.
 
 content             comments
 
-asin                The ISBN 10 for the paper book the pages correspond to
+asin                The ISBN 10 for the paper book the pages correspond to.
 pageMap             Three value tuple. Looks like: "(N,N,N)"
-                    1) Number of bytes after header that starts the page numbering sequence
-                    2) unknown
-                    3) unknown
+                    1) Number of bytes after header that starts the page numbering sequence.
+                    2) unknown.
+                    3) unknown.
 
 Example:
 {"asin":"1906694184","pageMap":"(4,a,1)"}
